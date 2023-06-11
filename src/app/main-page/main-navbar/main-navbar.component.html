@@ -1,0 +1,389 @@
+<div class="wrap-nav">
+
+  <nav class="first-nav">
+    <ul>
+      <div>
+        <li><a href="">Contact us</a></li>
+        <li><a href=""><i class="fa fa-whatsapp"></i>Start chat</a></li>
+        <li><a href="">Tourist Call Center</a></li>
+      </div>
+      <span class="material-symbols-outlined">language</span>
+      <select name="" id="">
+        <option value="">En</option>
+        <option value="">Ar</option>
+        <option value="">Zh</option>
+        <option value="">De</option>
+        <option value="">En</option>
+        <option value="">Es</option>
+        <option value="">Fr</option>
+        <option value="">Ja</option>
+        <option value="">Ru</option>
+      </select>
+    </ul>
+  </nav>
+
+
+  <nav class="second-nav">
+
+    <!-- mobilna verzija menu -->
+
+    <div class="overlay" (click)="hideModileMenu()"></div>
+
+    <span class="material-symbols-outlined menu-icon" (click)="showMobileMenu()">menu</span>
+
+    <div class="mobile-menu" *ngIf="isMobileMenuOpened">
+      <div class="person-icon"><span class="material-symbols-outlined">person</span>Sign In</div>
+      <ul>
+
+        <li (click)="changeArrowFunc1()">
+          <div class="li-name">
+            See & Do
+            <span class="material-symbols-outlined">{{changeArrow1 ? 'expand_less': 'expand_more'}}</span>
+          </div>
+
+          <div *ngIf="changeArrow1" class="drop-down-ul-after-change-arrow">
+            <ul>
+              <li>Explore all</li>
+              <li>Destinations</li>
+              <li>Activities & Attractions</li>
+              <li>Food & Drink</li>
+              <li>Experiences & Tours</li>
+            </ul>
+          </div>
+
+        </li>
+
+
+
+        <li (click)="changeArrowFunc2()">
+
+          <div class="li-name">
+            Plan Your Trip
+            <span class="material-symbols-outlined">{{changeArrow2 ? 'expand_less' : 'expand_more'}}</span>
+          </div>
+
+          <div *ngIf="changeArrow2" class="drop-down-ul-after-change-arrow">
+            <ul>
+              <li>Explore all</li>
+              <li>Trip planner</li>
+              <li>Transportation</li>
+              <li>Road trip guide</li>
+            </ul>
+          </div>
+
+        </li>
+
+
+
+        <li (click)="changeArrowFunc3()">
+
+          <div class="li-name">
+            Travel Essentials
+            <span class="material-symbols-outlined">{{changeArrow3 ? 'expand_less' : 'expand_more'}}</span>
+          </div>
+
+          <div *ngIf="changeArrow3" class="drop-down-ul-after-change-arrow">
+            <ul>
+              <li>Explore all</li>
+              <li>About Saudi</li>
+              <li>Safety travel tips</li>
+              <li>Useful contacts</li>
+              <li>Travel Regulations</li>
+            </ul>
+          </div>
+
+        </li>
+
+
+
+        <li>Saudi Calendar</li>
+        <li>Experiences</li>
+        <li>Saudi Map</li>
+        <li><a href="">Apply for eVisa<span class="material-symbols-outlined">chevron_right</span></a></li>
+      </ul>
+
+
+      <!-- mobilna verzija, ispod menija-->
+
+      <div class="more-info">
+        <div><span class="material-symbols-outlined">help</span>Contact Us</div>
+        <div><i class="fa fa-whatsapp"></i>Start Chat</div>
+      </div>
+
+      <p>Tourist Call Center</p>
+
+      <div class="choose-language-div" (click)="changeArrowFunc4()">
+        <div class="ss">
+          <div><span class="material-symbols-outlined">language</span>En <span>- English</span></div>
+          <div><span class="material-symbols-outlined">{{changeArrow4 ? 'expand_less' : 'expand_more'}}</span></div>
+        </div>
+      </div>
+
+      <!-- drop-down jezici -->
+      <ul class="language-ul" *ngIf="changeArrow4">
+        <li>Ar</li>
+        <li>Zh</li>
+        <li>De <span>- Deutsch</span></li>
+        <li>
+          <div>En <span>- English</span></div> <i class="fa fa-check" aria-hidden="true"></i>
+        </li>
+        <li>Es <span>- Español</span></li>
+        <li>Fr <span>- Français</span></li>
+        <li>Ja</li>
+        <li>Ru <span>- Russian</span></li>
+      </ul>
+
+    </div>
+
+
+    <!-- kraj mobilne verzije menu -->
+
+
+
+    <img src="../assets/img/main-page/logo.png.crdownload">
+
+    <!-- glavna drop-down sekcija -->
+    <ul>
+
+      <!-- prvi drop-down -->
+      <li (click)="toggleMenu1()"><a href="#">See & Do</a></li>
+
+      <div class="first-menu-drop-down" *ngIf="isMenuOpened1">
+
+        <div class="first-drop-down-div">
+          <ul>
+            <li><span class="crtica"></span>Explore All<span class="material-symbols-outlined">chevron_right</span>
+            </li>
+            <li class="destinations-li"><span class="crtica"></span>Destinations<span
+                class="material-symbols-outlined">chevron_right</span></li>
+            <li><span class="crtica"></span>Activities & Attractions<span
+                class="material-symbols-outlined">chevron_right</span></li>
+            <li class="probaj"><span class="crtica"></span>Food & Drink<span
+                class="material-symbols-outlined">chevron_right</span></li>
+            <li><span class="crtica"></span>Experiences & Tours<span
+                class="material-symbols-outlined">chevron_right</span></li>
+          </ul>
+        </div>
+
+        <div class="second-drop-down-div-a">
+
+          <span (click)="toggleMenu1()" class="material-symbols-outlined close-btn">close</span>
+
+          <div class="one-each one-each-same">
+            <span>Show time</span>
+            <p>Visit King Fahd’s Fount...</p>
+            <a href="">Learn More<span class="material-symbols-outlined">chevron_right</span></a>
+          </div>
+
+          <div class="one-each one-each-same">
+            <span>Share Al-Hob souq</span>
+            <p>Dive into Dammam’s Lo...</p>
+            <a href="">Learn More<span class="material-symbols-outlined">chevron_right</span></a>
+          </div>
+          <div class="one-each one-each-different">
+            <p><span class="material-symbols-outlined">cloudy</span>Current weather</p>
+
+            <div class="svastarija">
+
+              <select name="" id="">
+                <option value="">Riyadh</option>
+                <option value="">Riyadh</option>
+                <option value="">Riyadh</option>
+                <option value="">Riyadh</option>
+              </select>
+              <span class="cloud-span"><span class="material-symbols-outlined">cloudy</span>Clouds</span>
+              <span class="temp">18°C</span>
+              <div class="temp-icons">
+                <span class="one-temp-icon-group"><span
+                    class="material-symbols-outlined">thermometer_loss</span>22°C</span>
+                <span class="one-temp-icon-group"><span
+                    class="material-symbols-outlined">thermometer_gain</span>13°C</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <div class="second-drop-down-div-b">
+          <div>
+            <h4>Browse by categories</h4>
+            <a href="">View all<span class="material-symbols-outlined">chevron_right</span></a>
+          </div>
+
+          <div class="background-pictures">
+            <div class="first-background-picture">
+              <i class="fa-light fa-users"></i>
+              Adventure activities
+            </div>
+            <div class="second-background-picture">
+              <i class="fa-light fa-users"></i>
+              Family activities
+            </div>
+            <div class="third-background-picture">
+              <i class="fa-light fa-users"></i>
+              Lifestyle activities
+            </div>
+            <div class="fourth-background-picture">
+              <i class="fa-light fa-users"></i>
+              Culture
+            </div>
+          </div>
+
+        </div> -->
+
+      </div>
+
+
+
+      <!-- drugi drop-down -->
+      <li (click)="toggleMenu2()"><a href="#">Plan Your Trip</a></li>
+
+      <div class="second-menu-drop-down first-menu-drop-down" *ngIf="isMenuOpened2">
+        <div class="first-drop-down-div">
+          <ul>
+            <li><span class="crtica"></span>Explore All<span class="material-symbols-outlined">chevron_right</span>
+            </li>
+            <li class="destinations-li"><span class="crtica"></span>Trip Planner<span
+                class="material-symbols-outlined">chevron_right</span></li>
+            <li><span class="crtica"></span>Transportation<span class="material-symbols-outlined">chevron_right</span>
+            </li>
+            <li><span class="crtica"></span>Road Trip Guide<span class="material-symbols-outlined">chevron_right</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="second-drop-down-div-a">
+
+          <span (click)="toggleMenu2()" class="material-symbols-outlined close-btn">close</span>
+
+          <div class="one-each one-each-same">
+            <span>Island ruins</span>
+            <p>Discover Tarout Castle</p>
+            <a href="">Learn More<span class="material-symbols-outlined">chevron_right</span></a>
+          </div>
+
+          <div class="one-each one-each-same">
+            <span>Cave adventure</span>
+            <p>Scale Al Qarah Mounta..</p>
+            <a href="">Learn More<span class="material-symbols-outlined">chevron_right</span></a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <li (click)="toggleMenu3()"><a href="#">Travel Essentials</a></li>
+
+      <!-- treci drop-down -->
+
+
+      <div class="first-menu-drop-down third-menu-drop-down" *ngIf="isMenuOpened3">
+
+        <div class="first-drop-down-div">
+          <ul>
+            <li><span class="crtica"></span>Explore All<span class="material-symbols-outlined">chevron_right</span>
+            </li>
+            <li class="destinations-li"><span class="crtica"></span>About Saudi<span
+                class="material-symbols-outlined">chevron_right</span></li>
+            <li><span class="crtica"></span>Safety Travel Tips<span
+                class="material-symbols-outlined">chevron_right</span></li>
+            <li><span class="crtica"></span>Useful Contacts<span class="material-symbols-outlined">chevron_right</span>
+            </li>
+            <li><span class="crtica"></span>Travel Regulations<span
+                class="material-symbols-outlined">chevron_right</span></li>
+          </ul>
+        </div>
+
+        <div class="second-drop-down-div-a">
+
+          <span (click)="toggleMenu3()" class="material-symbols-outlined close-btn">close</span>
+
+          <div class="one-each one-each-same">
+            <span> Words to know before you go</span>
+            <p>Arabic 101: Common ph...</p>
+            <a href="">Learn More<span class="material-symbols-outlined">chevron_right</span></a>
+          </div>
+
+          <div class="one-each one-each-same">
+            <span>What to expect, how to pack، when to go</span>
+            <p>Saudi weather: What y...</p>
+            <a href="">Learn More<span class="material-symbols-outlined">chevron_right</span></a>
+          </div>
+          <div class="one-each one-each-different">
+            <p><span class="material-symbols-outlined">call</span>Important numbers</p>
+
+            <div class="f">
+              <div class="div-one">
+                <div class="div-a"><span class="material-symbols-outlined">dialpad</span></div>
+                <div class="div-b"><span>966</span><span>Dial code</span></div>
+              </div>
+              <div class="div-one">
+                <div class="div-a"><span class="material-symbols-outlined">add</span></div>
+                <div class="div-b"><span>997</span><span>Ambulance</span></div>
+              </div>
+              <div class="div-one">
+                <div class="div-a"><span class="material-symbols-outlined">public</span></div>
+                <div class="div-b"><span>930</span><span>Tourism call center</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <li>
+        <a href="#">Saudi Calendar</a>
+      </li>
+
+      <li>
+        <a href="#">Experiences</a>
+      </li>
+
+      <li>
+        <a href="#">Saudi Map</a>
+      </li>
+
+    </ul>
+
+    <div class="i-group">
+      <i class="fa fa-search"></i>
+      <i class="fa fa-user-o"></i>
+    </div>
+    <div class="div-a">
+      <a href="">Aplly for eVisa</a>
+    </div>
+
+
+    <!-- search u mobilnoj verziji -->
+    <span class="material-symbols-outlined search-icon">search</span>
+  </nav>
+</div>
+
+
+<!-- pozadina ispod navbar-a  -->
+
+<div class="discover-div">
+  <img class="background-img" src="../assets/img/main-page/stopover-saudi.png">
+  <h1>Saudi Stopover</h1>
+  <p>Apply for a free stopover visa when you fly Saudia or Flynas and explore Saudi for up to 96 hours on your way to
+    your final destination</p>
+  <button>Book Now</button>
+  <span></span>
+
+  <div class="images-div">
+    <img src="../assets/img/main-page/stopover-saudi.png" alt="">
+    <img src="../assets/img/main-page/main-navbar/winter_slide.jpg" alt="">
+    <img src="../assets/img/main-page/main-navbar/Diriyah-season_crop-660x337.webp" alt="">
+    <img src="../assets/img/main-page/main-navbar/Season-banner.jpg">
+    <img src="../assets/img/main-page/main-navbar/Messi-slide.png" alt="">
+  </div>
+</div>
+
+<div class="link-group">
+  <a href="">Saudi Stopover</a>
+  <a href="">Winter Like Nowhere</a>
+  <a href="">Diriyah Season</a>
+  <a href="">Riyadh Season</a>
+  <a href="">Discover another side of yourself with Messi</a>
+</div>

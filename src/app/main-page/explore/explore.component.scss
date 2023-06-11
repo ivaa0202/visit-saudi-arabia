@@ -1,0 +1,48 @@
+.mapouter {
+    background: linear-gradient(to bottom, #077d8b 50%, white 50%);
+    padding-bottom: 100px;
+
+    h1 {
+        color: white;
+        display: flex;
+        padding: 35px 120px;
+        font-size: 30px;
+    }
+
+    .gmap_canvas {
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+    }
+
+
+    //tablet verzija
+    @media screen and (max-width: 1200px) {
+
+        h1 {
+            padding: 30px 90px 25px 93px;
+            font-size: 28px;
+        }
+
+        .gmap_canvas {
+            height: 500px;
+            width: 1000px;
+        }
+    }
+
+    //telefon verzija
+
+    @media screen and (max-width: 600px) {
+
+        h1 {
+            padding: 30px 90px 25px 45px;
+            font-size: 37px;
+            text-align: left;
+        }
+
+        .gmap_canvas {
+            height: 350px;
+            width: 500px;
+        }
+    }
+}
