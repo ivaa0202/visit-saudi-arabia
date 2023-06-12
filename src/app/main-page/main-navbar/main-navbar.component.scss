@@ -715,71 +715,120 @@
 
 
 
-
+.discover-div::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    filter: blur(10px);
+}
 
 
 .discover-div {
     position: relative;
     overflow: hidden;
     z-index: -1;
+    background-image: url('../../../assets/img/main-page/stopover-saudi.png');
+    background-size: cover;
+    background-position: 50% 55%;
+    height: 640px;
 
-    .background-img {
-        filter: blur(8px);
-        width: 100%;
-        object-fit: cover;
-        object-position: 50% 56%;
-        height: 640px;
+    .discover-div-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 620px;
+
+        .discover-div-info {
+            padding: 135px;
+            display: flex;
+            flex-direction: column;
+
+            h1,
+            p,
+            button {
+                color: white;
+                position: relative;
+                z-index: 2;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+
+            p {
+                font-size: 18px;
+                width: 450px;
+                opacity: .7;
+                margin-block: 25px;
+            }
+
+            button {
+                background: transparent;
+                border: 1px solid white;
+                border-radius: 20px;
+                padding: 8px 28px;
+                font-size: 14px;
+                cursor: pointer;
+                width: 140px;
+            }
+
+
+            span {
+                content: '';
+                display: block;
+                height: 100%;
+                width: 100%;
+                background-color: black;
+                opacity: 0.2;
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-shadow: inset 20px 20px 10px black;
+            }
+        }
+
+
+        .link-group {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+
+            a {
+                color: white;
+                opacity: .5;
+                text-decoration: none;
+                border-top: 1px solid hsla(0, 0%, 100%, .4);
+                padding: 18px 20px 0 20px;
+                width: 240px;
+                font-size: 18px;
+                position: relative;
+
+                &:first-child {
+                    color: white;
+                    opacity: 1;
+                    border-top: 1px solid white;
+                }
+
+                &:last-child {
+                    padding-top: 5px;
+                    text-align: justify;
+                }
+
+                &:hover {
+                    color: white;
+                    border-top: 1px solid white;
+                    transition: .2s;
+                    opacity: 1;
+                }
+            }
+        }
+
+
+
     }
-
-    h1,
-    p,
-    button {
-        z-index: 2;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        color: white;
-    }
-
-    h1 {
-        font-size: 50px;
-        top: 25%;
-        left: 20%;
-    }
-
-    p {
-        font-size: 18px;
-        top: 40%;
-        left: 24.2%;
-        width: 450px;
-        opacity: .7;
-
-    }
-
-    button {
-        top: 55%;
-        left: 13%;
-        background: transparent;
-        border: 1px solid white;
-        border-radius: 20px;
-        padding: 8px 28px;
-        font-size: 14px;
-        cursor: pointer;
-    }
-
-
-    span {
-        content: '';
-        display: block;
-        height: 100%;
-        width: 100%;
-        background-color: black;
-        opacity: 0.2;
-        position: absolute;
-        top: 0;
-        left: 0;
-        box-shadow: inset 20px 20px 10px black;
-    }
-
 
     .images-div {
 
@@ -824,49 +873,9 @@
                 left: 78%;
             }
         }
-
     }
 
 }
-
-
-
-.link-group {
-    position: absolute;
-    bottom: 40px;
-    left: 7%;
-    display: flex;
-    text-align: center;
-
-    a {
-        color: white;
-        opacity: .5;
-        text-decoration: none;
-        border-top: 1px solid hsla(0, 0%, 100%, .4);
-        padding: 18px 20px 0 20px;
-        width: 240px;
-        font-size: 18px;
-
-        &:first-child {
-            color: white;
-            opacity: 1;
-            border-top: 1px solid white;
-        }
-
-        &:last-child {
-            padding-top: 5px;
-            text-align: justify;
-        }
-
-        &:hover {
-            color: white;
-            border-top: 1px solid white;
-            transition: .2s;
-            opacity: 1;
-        }
-    }
-}
-
 
 
 
@@ -878,25 +887,35 @@
 @media only screen and (max-width: 1200px) {
 
     .discover-div {
+        height: 600px;
 
-        .background-img {
-            height: 540px;
+        .discover-div-content {
+
+            height: 580px;
+
+            .discover-div-info {
+                padding: 155px 100px;
+
+                h1 {
+                    font-size: 46px;
+                }
+
+                p {
+                    font-size: 15px;
+                    width: 400px;
+                }
+
+            }
+
+            .link-group {
+                padding: 0 30px;
+
+                a {
+                    font-size: 16px;
+                }
+            }
         }
 
-        h1 {
-            font-size: 46px;
-            left: 22%;
-        }
-
-        p {
-            font-size: 15px;
-            left: 26%;
-            width: 400px;
-        }
-
-        button {
-            left: 14.5%;
-        }
 
 
         .images-div {
@@ -929,17 +948,6 @@
 
     }
 
-
-    .link-group {
-        top: 535px;
-        left: 5%;
-        width: 88%;
-
-        a {
-            font-size: 16px;
-        }
-    }
-
 }
 
 
@@ -950,14 +958,34 @@
 @media only screen and (max-width: 600px) {
 
     .discover-div {
-
         overflow: inherit;
         margin-bottom: 100px;
+        height: 420px;
 
-        .background-img {
-            object-position: 50% 56%;
+        .discover-div-content {
             height: 400px;
+
+            .discover-div-info {
+                text-align: center;
+                align-items: center;
+                
+                padding-block: 35px;
+
+                button {
+                    display: none;
+                }
+
+                h1 {
+                    font-size: 25px;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .link-group {
+                display: none;
+            }
         }
+
 
         .images-div {
             img:first-child {
@@ -975,27 +1003,6 @@
                 display: none;
             }
         }
-
-
-        button {
-            display: none;
-        }
-
-        h1 {
-            font-size: 25px;
-            top: 10%;
-            left: 50%;
-            letter-spacing: 1px;
-        }
-
-        p {
-            top: 30%;
-            left: 52%;
-        }
-    }
-
-    .link-group {
-        display: none;
     }
 }
 
